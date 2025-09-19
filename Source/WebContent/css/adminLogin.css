@@ -1,0 +1,272 @@
+/* 기본 스타일 */
+:root {
+    --primary-color: #ff6b6b;
+    --primary-dark: #e85c5c;
+    --primary-light: #ffecec;
+    --secondary-color: #4dabf7;
+    --text-color: #333;
+    --text-light: #666;
+    --text-muted: #999;
+    --border-color: #eee;
+    --bg-color: #f8f9fa;
+    --bg-light: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 6px 15px rgba(0, 0, 0, 0.1);
+    --radius: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/food-background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* 관리자 로그인 컨테이너 */
+.admin-login-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+/* 로그인 박스 */
+.login-box {
+    background-color: var(--bg-light);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 30px;
+}
+
+/* 로그인 헤더 */
+.login-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.logo i {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 28px;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.login-header h2 {
+    font-size: 22px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.login-header p {
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+/* 에러 메시지 */
+.error-message {
+    background-color: #fff0f0;
+    color: #e74c3c;
+    padding: 12px;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.error-message i {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+/* 로그인 폼 */
+.login-form {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-group label i {
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+/* 비밀번호 입력 필드 래퍼 */
+.password-input-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.toggle-password:hover {
+    color: var(--primary-color);
+}
+
+/* 로그인 상태 유지 체크박스 */
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: var(--primary-color);
+}
+
+.remember-me label {
+    font-size: 14px;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+/* 로그인 버튼 */
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-button i {
+    margin-right: 8px;
+}
+
+.login-button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.login-button:active {
+    transform: translateY(0);
+}
+
+/* 로그인 푸터 */
+.login-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.back-to-main, .forgot-password {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.back-to-main i {
+    margin-right: 5px;
+}
+
+.back-to-main:hover, .forgot-password:hover {
+    color: var(--primary-color);
+}
+
+/* 보안 알림 */
+.security-notice {
+    background-color: var(--primary-light);
+    padding: 12px;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: var(--primary-dark);
+}
+
+.security-notice i {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 576px) {
+    .admin-login-container {
+        padding: 15px;
+    }
+    
+    .login-box {
+        padding: 20px;
+    }
+    
+    .login-header h2 {
+        font-size: 20px;
+    }
+    
+    .login-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

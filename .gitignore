@@ -1,0 +1,32 @@
+# 환경 변수 파일 (민감한 정보 포함)
+config.properties
+.env
+
+# IDE 파일
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# 빌드 파일
+target/
+build/
+out/
+
+# 로그 파일
+*.log
+
+# 임시 파일
+*.tmp
+*.temp
+
+# OS 파일
+.DS_Store
+Thumbs.db
+
+# 클래스 파일
+*.class
+
+# JAR 파일 (제외: 필요한 라이브러리)
+# *.jar

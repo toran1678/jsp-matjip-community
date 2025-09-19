@@ -1,0 +1,297 @@
+/* 기본 스타일 */
+:root {
+    --primary-color: #ff6b6b;
+    --primary-dark: #e85c5c;
+    --primary-light: #ffecec;
+    --secondary-color: #4dabf7;
+    --text-color: #333;
+    --text-light: #666;
+    --text-muted: #999;
+    --border-color: #eee;
+    --bg-color: #f8f9fa;
+    --bg-light: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 6px 15px rgba(0, 0, 0, 0.1);
+    --radius: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 컨테이너 */
+.popular-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 헤더 */
+.popular-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px 0;
+}
+
+.popular-header h1 {
+    font-size: 32px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popular-header h1 i {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.popular-header p {
+    color: var(--text-light);
+    font-size: 16px;
+}
+
+/* 인기 맛집 콘텐츠 */
+.popular-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.post-card {
+    display: flex;
+    background-color: var(--bg-light);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.post-rank {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    font-weight: bold;
+    padding: 15px 0;
+}
+
+.rank-number {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.like-count {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.like-count i {
+    color: var(--primary-color);
+}
+
+.post-info {
+    flex: 1;
+    padding: 20px;
+}
+
+.post-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.post-title a {
+    color: var(--text-color);
+    transition: color 0.2s;
+}
+
+.post-title a:hover {
+    color: var(--primary-color);
+}
+
+.post-meta {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.post-category, .post-location {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.post-category i, .post-location i {
+    margin-right: 5px;
+    color: var(--primary-color);
+}
+
+.post-description {
+    margin-bottom: 15px;
+    color: var(--text-light);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.post-footer {
+    display: flex;
+    gap: 15px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.post-author i, .post-date i {
+    margin-right: 5px;
+}
+
+/* 빈 상태 */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.empty-state i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.empty-state p {
+    font-size: 18px;
+}
+
+/* 푸터 */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px 20px;
+    margin-top: 50px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-logo h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-links h4, .footer-contact h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-contact p {
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-contact i {
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 30px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .post-card {
+        flex-direction: column;
+    }
+    
+    .post-rank {
+        width: 100%;
+        padding: 10px 0;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    .rank-number {
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .popular-header h1 {
+        font-size: 24px;
+    }
+    
+    .popular-header p {
+        font-size: 14px;
+    }
+    
+    .post-title {
+        font-size: 18px;
+    }
+    
+    .post-meta {
+        flex-direction: column;
+        gap: 5px;
+    }
+}

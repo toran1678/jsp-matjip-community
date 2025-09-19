@@ -1,0 +1,470 @@
+/* 기본 스타일 */
+:root {
+    --primary-color: #ff6b6b;
+    --primary-dark: #e85c5c;
+    --primary-light: #ffecec;
+    --secondary-color: #4dabf7;
+    --text-color: #333;
+    --text-light: #666;
+    --text-muted: #999;
+    --border-color: #eee;
+    --bg-color: #f8f9fa;
+    --bg-light: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 6px 15px rgba(0, 0, 0, 0.1);
+    --radius: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* 사이드바 접힘/펼침 관련 스타일 */
+.map-sidebar.collapsed {
+    width: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+.map-content.expanded .kakao-map {
+    width: 100%;
+}
+
+/* 사이드바 확장 버튼 스타일 */
+.expand-sidebar-button {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    display: none; /* 초기에는 숨김 */
+}
+
+.expand-sidebar-button:hover {
+    background-color: #f8f8f8;
+}
+
+/* 지도 컨테이너 */
+.map-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* 지도 헤더 */
+.map-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.map-header h1 {
+    font-size: 28px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-header h1 i {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.map-header p {
+    color: var(--text-light);
+    font-size: 16px;
+}
+
+/* 필터 컨테이너 */
+.map-filter-container {
+    margin-bottom: 20px;
+}
+
+.map-filter {
+    background-color: var(--bg-light);
+    border-radius: var(--radius);
+    padding: 15px 20px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 150px;
+}
+
+.filter-group label {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.filter-select {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 14px;
+    color: var(--text-color);
+    background-color: white;
+}
+
+.filter-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+}
+
+.filter-button i {
+    margin-right: 5px;
+}
+
+.filter-button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* 지도 콘텐츠 */
+.map-content {
+    display: flex;
+    gap: 20px;
+    height: 600px;
+    position: relative;
+}
+
+.kakao-map {
+    flex: 1;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    min-height: 600px;
+}
+
+.map-sidebar {
+    width: 350px;
+    background-color: var(--bg-light);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease;
+}
+
+.map-sidebar.collapsed {
+    width: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+.map-content.expanded .kakao-map {
+    flex: 1;
+}
+
+.sidebar-header {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-header h3 {
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.sidebar-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.refresh-button, .toggle-button {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.refresh-button:hover, .toggle-button:hover {
+    color: var(--primary-color);
+}
+
+.search-box {
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.search-box button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 40px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-box button:hover {
+    background-color: var(--primary-dark);
+}
+
+.restaurant-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 15px 15px;
+}
+
+.restaurant-item {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.restaurant-item:last-child {
+    border-bottom: none;
+}
+
+.restaurant-item:hover {
+    background-color: var(--primary-light);
+}
+
+.restaurant-item.active {
+    background-color: var(--primary-light);
+    border-left: 3px solid var(--primary-color);
+}
+
+.restaurant-info {
+    flex: 1;
+}
+
+.restaurant-info h4 {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.restaurant-address {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.restaurant-address i {
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+.category-tag {
+    display: inline-block;
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
+.restaurant-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.rating-score {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.rating-score i {
+    color: #ffc107;
+    margin-right: 3px;
+}
+
+.review-count {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* 인포윈도우 스타일 */
+.map-infowindow {
+    padding: 10px;
+    width: 220px;
+}
+
+.map-infowindow h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.map-infowindow p {
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: var(--text-light);
+}
+
+.view-detail {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.view-detail:hover {
+    background-color: var(--primary-dark);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 992px) {
+    .map-content {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .kakao-map {
+        height: 400px;
+        min-height: 400px;
+    }
+    
+    .map-sidebar {
+        width: 100%;
+        height: 400px;
+    }
+    
+    .map-sidebar.collapsed {
+        height: 50px;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .map-content.expanded .kakao-map {
+        height: 600px;
+    }
+    
+    .toggle-button i {
+        transform: rotate(90deg);
+    }
+    
+    .map-sidebar.collapsed .toggle-button i {
+        transform: rotate(-90deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .map-filter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-button {
+        align-self: center;
+    }
+    
+    .kakao-map {
+        height: 350px;
+        min-height: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+    .map-container {
+        padding: 0 10px;
+    }
+    
+    .map-header h1 {
+        font-size: 24px;
+    }
+    
+    .map-header p {
+        font-size: 14px;
+    }
+    
+    .kakao-map {
+        height: 300px;
+        min-height: 300px;
+    }
+    
+    .map-sidebar {
+        height: 350px;
+    }
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+    .map-content {
+        flex-direction: column;
+    }
+    
+    .map-sidebar {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .map-sidebar.collapsed {
+        height: 0;
+    }
+    
+    .expand-sidebar-button {
+        top: auto;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .expand-sidebar-button i {
+        transform: rotate(90deg);
+    }
+}
